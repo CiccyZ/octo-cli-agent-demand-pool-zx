@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: octo-cli upstream repository
+    url: https://github.com/Mininglamp-OSS/octo-cli
+    about: Source project reference. Exam demand-pool issues should usually stay in this repository unless explicitly authorized otherwise.
