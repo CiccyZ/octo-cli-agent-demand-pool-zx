@@ -1,0 +1,37 @@
+name: Bug 反馈
+about: 记录 octo-cli 使用中的异常或不符合预期的问题
+title: "[Bug] "
+labels: ["type/bug", "status/new", "source/user-feedback"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题描述
+      description: 请描述你遇到的问题。
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 如果可以复现，请写出步骤。
+    validations:
+      required: false
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望表现
+    validations:
+      required: false
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际表现
+    validations:
+      required: false
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 相关证据 / 命令 / 截图
+    validations:
+      required: false

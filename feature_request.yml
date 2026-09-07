@@ -1,0 +1,32 @@
+name: Feature 需求
+about: 记录 octo-cli 新功能或体验改进需求
+title: "[Feature] "
+labels: ["type/feature", "status/new", "source/user-feedback"]
+body:
+  - type: textarea
+    id: user_problem
+    attributes:
+      label: 用户问题
+      description: 用户现在遇到什么不方便？
+    validations:
+      required: true
+  - type: textarea
+    id: desired_outcome
+    attributes:
+      label: 期望结果
+      description: 用户希望最终能完成什么？
+    validations:
+      required: true
+  - type: textarea
+    id: scenarios
+    attributes:
+      label: 使用场景
+    validations:
+      required: false
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 用户可感知的验收标准
+      description: 不写技术实现，只写用户能看到或感受到的结果。
+    validations:
+      required: false

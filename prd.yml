@@ -1,0 +1,54 @@
+name: PRD 草案
+about: 为已确认需求补充产品需求文档
+title: "[PRD] "
+labels: ["type/prd", "status/prd-drafting"]
+body:
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景
+    validations:
+      required: true
+  - type: textarea
+    id: user_problem
+    attributes:
+      label: 用户问题
+    validations:
+      required: true
+  - type: textarea
+    id: users
+    attributes:
+      label: 目标用户
+    validations:
+      required: true
+  - type: textarea
+    id: stories
+    attributes:
+      label: 用户故事
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 需求范围
+    validations:
+      required: true
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: 非目标
+    validations:
+      required: false
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收标准
+      description: 必须写成用户可感知的结果，不写技术实现。
+    validations:
+      required: true
+  - type: textarea
+    id: open_questions
+    attributes:
+      label: 风险与待确认问题
+    validations:
+      required: false
