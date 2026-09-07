@@ -2,38 +2,45 @@
 
 ## 主链路
 
-1. 收到用户反馈
-2. 判断类型：Bug / Feature / Question / PRD / Review
-3. 在本需求池创建或更新 issue
-4. 补齐标签：类型、优先级、状态、来源
-5. 若需要 PRD，进入 `status/prd-drafting`
-6. PRD 完成后进入 `status/in-review`
-7. Review Agent 检查 PRD 质量
-8. 若被打回，标记 `status/changes-requested` 并按原因修改
-9. 修改完成后重新进入 review
-10. 通过后标记 `status/ready`
+1. 阿珍收到用户反馈。
+2. 阿珍判断类型：Bug / Feature / Question / PRD / PRD Review。
+3. 阿珍将用户原始信息原封不动保存到本需求池 Issue。
+4. 阿珍补齐标签：类型、优先级、状态、来源。
+5. 若多人提到相似 Bug，阿珍优先追加到已有 Issue，减少重复。
+6. 若需要 PRD，阿珍进入 `status/prd-drafting` 并输出 PRD 初稿。
+7. PRD 草案完成后，阿珍提交阿强 Review，状态进入 `status/prd-review`。
+8. 阿强检查 PRD 质量，给正式 Review 结论。
+9. 若被打回，阿珍标记 `status/needs-revision`，并按阿强意见修改。
+10. 修改完成后阿珍重新提交 Review。
+11. 阿强复审通过后，阿珍标记 `status/ready` 或按实际情况进入下一状态。
 
 ## 群消息规则
 
 有有效变化才回群，例如：
 
-- 新需求已归档
-- issue 被关闭
-- issue 被标记为 feature
-- review 要求修改
-- PRD 修改完成并重新提交 review
+- 新需求已归档，并给出 Issue 链接。
+- issue 被关闭。
+- issue 被标记为 bug / feature / prd。
+- Review 要求修改。
+- PRD 修改完成并重新提交 Review。
 
 不得发送：
 
-- 正在检查
-- 本次扫描无更新
-- 一切正常
-- 无变化
+- 正在检查。
+- 本次扫描无更新。
+- 一切正常。
+- 无变化。
 
 ## 状态转达要求
 
 转达必须如实：
 
-- 已修复 ≠ 没复现
-- 没复现 ≠ 不做
-- wontfix ≠ 已完成
+- 已修复 ≠ 未复现。
+- 未复现 ≠ 不修复。
+- 不修复 / wontfix ≠ 已完成。
+- 信息不足 ≠ 不处理；信息不足时应保留原文并标记 `status/needs-info`。
+
+## 角色边界
+
+- 阿珍负责 Review 流转和 PRD 修改。
+- 阿强负责 Review 裁决和复审。
