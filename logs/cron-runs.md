@@ -5,3 +5,4 @@
 | 时间 Asia/Shanghai | 扫描范围 | 结果 | 后续动作 |
 |---|---|---|---|
 | 待首次运行 | GitHub Issues / Labels / Comments | 待执行 | 无 |
+| 2026-09-07T06:03:01.621Z | GitHub Issues / Labels / Comments | Issues empty / snapshot initialized | Review changed issues and notify exam group if needed |
