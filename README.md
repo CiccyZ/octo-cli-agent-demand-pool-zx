@@ -53,4 +53,5 @@
 - [PM 工作流](docs/pm-workflow.md)
 - [PRD 写作规范](docs/prd-guideline.md)
 - [PRD Review 质量闸口](docs/prd-review-guideline.md)
+- [自动化说明](docs/automation.md)
 - [定时扫描记录](logs/cron-runs.md)
