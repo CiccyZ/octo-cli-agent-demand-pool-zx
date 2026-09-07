@@ -21,6 +21,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Scan issues and update audit log on changes
+        id: scan
         uses: actions/github-script@v7
         with:
           script: |
@@ -64,7 +65,7 @@ jobs:
             }
             core.setOutput('changed', changed ? 'true' : 'false');
       - name: Commit scan changes
-        if: steps.github-script.outputs.changed == 'true'
+        if: steps.scan.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
