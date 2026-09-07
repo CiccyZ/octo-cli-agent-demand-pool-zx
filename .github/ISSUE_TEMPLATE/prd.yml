@@ -1,7 +1,7 @@
 name: PRD 草案
 about: 为已确认需求补充产品需求文档
 title: "[PRD] "
-labels: ["type/prd", "status/prd-drafting"]
+labels: ["type/prd", "status/prd-drafting", "priority/P2"]
 body:
   - type: textarea
     id: background

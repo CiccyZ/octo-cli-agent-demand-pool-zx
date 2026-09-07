@@ -1,7 +1,7 @@
 name: Bug 反馈
 about: 记录 octo-cli 使用中的异常或不符合预期的问题
 title: "[Bug] "
-labels: ["type/bug", "status/new", "source/user-feedback"]
+labels: ["type/bug", "status/new", "source/user-feedback", "priority/P1"]
 body:
   - type: textarea
     id: problem

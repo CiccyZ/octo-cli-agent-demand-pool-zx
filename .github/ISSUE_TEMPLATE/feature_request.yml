@@ -1,7 +1,7 @@
 name: Feature 需求
 about: 记录 octo-cli 新功能或体验改进需求
 title: "[Feature] "
-labels: ["type/feature", "status/new", "source/user-feedback"]
+labels: ["type/feature", "status/new", "source/user-feedback", "priority/P2"]
 body:
   - type: textarea
     id: user_problem

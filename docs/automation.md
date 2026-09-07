@@ -24,3 +24,7 @@ Workflow: `.github/workflows/cron-scan.yml`
 ## Notification rule
 
 The scan is intentionally change-driven. No-change scans are visible in the Actions history but do not spam the repository or the Octo group. When a real change is detected, the responsible Agent should summarize the changed issue and notify the exam group with the issue link, current status, and next action.
+
+## Verification note
+
+Push-triggered runs are smoke checks to verify the workflow after configuration changes. The production scanning mechanism remains the scheduled cron (`*/10 * * * *`), which does not depend on manual chat triggers.

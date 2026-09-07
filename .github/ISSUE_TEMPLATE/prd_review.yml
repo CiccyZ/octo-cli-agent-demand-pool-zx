@@ -1,7 +1,7 @@
 name: PRD Review
 about: 对 PRD 草案进行质量审查
 title: "[PRD Review] "
-labels: ["type/prd-review", "status/prd-review"]
+labels: ["type/prd-review", "status/prd-review", "priority/P1"]
 body:
   - type: input
     id: related_issue

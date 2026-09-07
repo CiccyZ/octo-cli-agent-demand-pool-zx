@@ -1,15 +1,87 @@
 [
-  {"name":"type/bug","color":"d73a4a","description":"Bug feedback"},
-  {"name":"type/feature","color":"a2eeef","description":"Feature or enhancement request"},
-  {"name":"type/prd","color":"7057ff","description":"PRD draft"},
-  {"name":"type/prd-review","color":"5319e7","description":"PRD review record"},
-  {"name":"source/exam","color":"fbca04","description":"Raised during AINOL exam"},
-  {"name":"source/user-feedback","color":"bfdadc","description":"Raised from user feedback"},
-  {"name":"status/new","color":"cfd3d7","description":"New intake"},
-  {"name":"status/needs-info","color":"fef2c0","description":"Waiting for more information"},
-  {"name":"status/prd-drafting","color":"d4c5f9","description":"PRD is being drafted"},
-  {"name":"status/prd-review","color":"c5def5","description":"Waiting for PRD review"},
-  {"name":"status/needs-revision","color":"f9d0c4","description":"Needs revision after review"},
-  {"name":"status/ready","color":"0e8a16","description":"Ready for next step"},
-  {"name":"status/closed","color":"eeeeee","description":"Closed or no action needed"}
+  {
+    "name": "type/bug",
+    "color": "d73a4a",
+    "description": "Bug feedback"
+  },
+  {
+    "name": "type/feature",
+    "color": "a2eeef",
+    "description": "Feature or enhancement request"
+  },
+  {
+    "name": "type/prd",
+    "color": "7057ff",
+    "description": "PRD draft"
+  },
+  {
+    "name": "type/prd-review",
+    "color": "5319e7",
+    "description": "PRD review record"
+  },
+  {
+    "name": "source/exam",
+    "color": "fbca04",
+    "description": "Raised during AINOL exam"
+  },
+  {
+    "name": "source/user-feedback",
+    "color": "bfdadc",
+    "description": "Raised from user feedback"
+  },
+  {
+    "name": "priority/P0",
+    "color": "b60205",
+    "description": "Critical priority: blocks exam or core workflow"
+  },
+  {
+    "name": "priority/P1",
+    "color": "d93f0b",
+    "description": "High priority: should be handled soon"
+  },
+  {
+    "name": "priority/P2",
+    "color": "fbca04",
+    "description": "Medium priority: normal queue"
+  },
+  {
+    "name": "priority/P3",
+    "color": "0e8a16",
+    "description": "Low priority: nice to have"
+  },
+  {
+    "name": "status/new",
+    "color": "cfd3d7",
+    "description": "New intake"
+  },
+  {
+    "name": "status/needs-info",
+    "color": "fef2c0",
+    "description": "Waiting for more information"
+  },
+  {
+    "name": "status/prd-drafting",
+    "color": "d4c5f9",
+    "description": "PRD is being drafted"
+  },
+  {
+    "name": "status/prd-review",
+    "color": "c5def5",
+    "description": "Waiting for PRD review"
+  },
+  {
+    "name": "status/needs-revision",
+    "color": "f9d0c4",
+    "description": "Needs revision after review"
+  },
+  {
+    "name": "status/ready",
+    "color": "0e8a16",
+    "description": "Ready for next step"
+  },
+  {
+    "name": "status/closed",
+    "color": "eeeeee",
+    "description": "Closed or no action needed"
+  }
 ]
