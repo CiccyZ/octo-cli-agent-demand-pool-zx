@@ -1,16 +1,30 @@
 [
   {
-    "number": 2,
-    "title": "[PRD Review] Issue intake bridge v0.2 复审入口（替代已删除 #1）",
+    "number": 3,
+    "title": "支持 Space 级别默认授权给某 bot 访问新文档",
     "state": "open",
     "labels": [
       "priority/P2",
-      "source/exam",
-      "status/prd-review",
-      "type/prd"
+      "source/user-feedback",
+      "status/new",
+      "type/feature"
     ],
-    "updated_at": "2026-09-08T05:46:10Z",
-    "created_at": "2026-09-08T05:46:10Z",
-    "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/2"
+    "updated_at": "2026-09-08T07:57:57Z",
+    "created_at": "2026-09-08T07:46:22Z",
+    "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/3"
+  },
+  {
+    "number": 4,
+    "title": "Loop 任务已完成列表支持按完成时间倒序排列",
+    "state": "open",
+    "labels": [
+      "priority/P2",
+      "source/user-feedback",
+      "status/new",
+      "type/feature"
+    ],
+    "updated_at": "2026-09-08T07:57:56Z",
+    "created_at": "2026-09-08T07:46:22Z",
+    "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/4"
   }
 ]
