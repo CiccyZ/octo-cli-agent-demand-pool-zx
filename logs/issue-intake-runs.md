@@ -30,3 +30,4 @@
 | 2026-09-08T11:06:45.636Z | 20260908t1105z-prd-review-issue-5.json | commented #5 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/5 |
 | 2026-09-08T11:10:58.000Z | 20260908T1108Z-update-prd-v02-issue-4.json | edited #4 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/4 |
 | 2026-09-08T11:21:20.567Z | 20260908T1120Z-fix-issue-7-image-display.json | edited #7 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/7 |
+| 2026-09-08T11:29:48.154Z | 20260908T112849Z-conversation-search-list-position.json | created #8 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/8 |
