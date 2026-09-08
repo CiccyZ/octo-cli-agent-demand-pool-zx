@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "number": 1,
+    "title": "[E2E Test] 阿珍 GitHub Actions issue intake bridge 验证",
+    "state": "open",
+    "labels": [
+      "priority/P2",
+      "source/exam",
+      "status/new",
+      "type/feature"
+    ],
+    "updated_at": "2026-09-08T05:32:50Z",
+    "created_at": "2026-09-08T05:32:50Z",
+    "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/1"
+  }
+]
