@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T11:03:08.735Z",
+  "generated_at": "2026-09-08T11:06:50.525Z",
   "scan_rule": {
     "label": "status/prd-review",
     "max_per_run": 2,
@@ -9,11 +9,11 @@
   "total_open_prd_review_issues": 2,
   "candidates": [
     {
-      "number": 4,
-      "title": "Loop 任务已完成列表支持按完成时间倒序排列",
-      "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/4",
+      "number": 3,
+      "title": "支持 Space 级别默认授权给某 bot 访问新文档",
+      "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/3",
       "labels": [
-        "area/task-collab",
+        "area/docs-permission",
         "priority/P2",
         "source/user-feedback",
         "status/new",
@@ -21,13 +21,13 @@
         "status/review",
         "type/feature"
       ],
-      "updated_at": "2026-09-08T09:57:33Z",
-      "prd_path": "docs/prd/loop-completed-tasks-sort.md",
-      "prd_url": "https://raw.githubusercontent.com/CiccyZ/octo-cli-agent-demand-pool-zx/main/docs/prd/loop-completed-tasks-sort.md",
-      "self_check": "自检结果\n\n- Issue 链接已包含：通过。\n- PRD 使用 Markdown 格式：通过。\n- PRD 只描述用户问题、目标、范围和可感知结果，不写技术实现：通过。\n- 未出现 Redis、数据库表、接口字段、代码块等 How 内容：通过。\n- 验收标准均为用户可感知效果，没有使用“接口返回 200”等技术指标：通过。\n- 用户原始反馈与产品分析分离：通过。\n- 范围和非目标已写清：通过。\n- 风险与待确认问题已列出：通过。\n- 未包含 token、私钥、cookie 等敏感信息：通过。\n\n\n\n---comment---\n\n<!-- azhen-intake-file: 20260908T075236Z-append-image-attachment-issue-4.json -->",
+      "updated_at": "2026-09-08T11:03:08Z",
+      "prd_path": "docs/prd/space-default-bot-doc-auth.md",
+      "prd_url": "https://raw.githubusercontent.com/CiccyZ/octo-cli-agent-demand-pool-zx/main/docs/prd/space-default-bot-doc-auth.md",
+      "self_check": "自检结果\n\n- Issue 链接已包含：通过。\n- PRD 使用 Markdown 格式：通过。\n- PRD 只描述用户问题、目标、范围和可感知结果，不写技术实现：通过。\n- 未出现 Redis、数据库表、接口字段、代码块等 How 内容：通过。\n- 验收标准均为用户可感知效果，没有使用“接口返回 200”等技术指标：通过。\n- 用户原始反馈与产品分析分离：通过。\n- 范围和非目标已写清：通过。\n- 已按 Review 补齐权限配置主体、默认权限档位、撤销与历史文档关系：通过。\n- 风险与待确认问题已列出：通过。\n- 未包含 token、私钥、cookie 等敏感信息：通过。\n\n\n\n---comment---",
       "evidence": {
-        "issue_link": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/4",
-        "prd_path": "docs/prd/loop-completed-tasks-sort.md",
+        "issue_link": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/3",
+        "prd_path": "docs/prd/space-default-bot-doc-auth.md",
         "self_check_present": true
       },
       "ready_for_review": true,
@@ -41,14 +41,14 @@
         "area/agent-automation",
         "priority/P1",
         "source/user-feedback",
-        "status/prd-review",
+        "status/needs-revision",
         "status/review",
         "type/bug"
       ],
-      "updated_at": "2026-09-08T09:57:34Z",
+      "updated_at": "2026-09-08T11:06:49Z",
       "prd_path": "docs/prd/web-macos-message-display-abnormal.md",
       "prd_url": "https://raw.githubusercontent.com/CiccyZ/octo-cli-agent-demand-pool-zx/main/docs/prd/web-macos-message-display-abnormal.md",
-      "self_check": "自检结果\n\n- Issue 链接已包含：通过。\n- PRD 使用 Markdown 格式：通过。\n- PRD 只描述用户问题、目标、范围和可感知结果，不写技术实现：通过。\n- 未出现 Redis、数据库表、接口字段、代码块等 How 内容：通过。\n- 验收标准均为用户可感知效果，没有使用“接口返回 200”等技术指标：通过。\n- 用户原始反馈与产品分析分离：通过。\n- 范围和非目标已写清：通过。\n- 风险与待确认问题已列出：通过。\n- 未包含 token、私钥、cookie 等敏感信息：通过。",
+      "self_check": "自检结果\n\n- Issue 链接已包含：通过。\n- PRD 使用 Markdown 格式：通过。\n- PRD 只描述用户问题、目标、范围和可感知结果，不写技术实现：通过。\n- 未出现 Redis、数据库表、接口字段、代码块等 How 内容：通过。\n- 验收标准均为用户可感知效果，没有使用“接口返回 200”等技术指标：通过。\n- 用户原始反馈与产品分析分离：通过。\n- 范围和非目标已写清：通过。\n- 风险与待确认问题已列出：通过。\n- 未包含 token、私钥、cookie 等敏感信息：通过。\n\n\n\n---comment---",
       "evidence": {
         "issue_link": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/5",
         "prd_path": "docs/prd/web-macos-message-display-abnormal.md",
