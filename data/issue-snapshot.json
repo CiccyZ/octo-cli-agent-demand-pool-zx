@@ -45,5 +45,20 @@
     "updated_at": "2026-09-08T08:56:52Z",
     "created_at": "2026-09-08T08:56:52Z",
     "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/5"
+  },
+  {
+    "number": 6,
+    "title": "对话选择栏缺少明显分割线，多个对话时不易定位",
+    "state": "open",
+    "labels": [
+      "area/agent-automation",
+      "priority/P2",
+      "source/user-feedback",
+      "status/review",
+      "type/ux"
+    ],
+    "updated_at": "2026-09-08T09:08:20Z",
+    "created_at": "2026-09-08T09:08:20Z",
+    "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/6"
   }
 ]
