@@ -87,6 +87,21 @@ async function addLabelsIfAny(github, owner, repo, issue_number, labels, core) {
   }
 }
 
+async function removeLabelsIfAny(github, owner, repo, issue_number, labels, core) {
+  if (!labels.length) return;
+  for (const name of labels) {
+    try {
+      await github.rest.issues.removeLabel({owner, repo, issue_number, name});
+    } catch (error) {
+      if (error.status === 404) {
+        core.info(`label ${name} not present on #${issue_number}; skip removal`);
+      } else {
+        core.warning(`Failed to remove label ${name} from #${issue_number}: ${error.message}`);
+      }
+    }
+  }
+}
+
 module.exports = async ({github, context, core}) => {
   const {owner, repo} = context.repo;
   const intakeDir = 'intake/issues';
@@ -121,9 +136,25 @@ module.exports = async ({github, context, core}) => {
       item = readJson(src);
       if (!item || typeof item !== 'object') throw new Error('intake JSON must be an object');
       const labels = normalizeLabels(item.labels);
+      const removeLabels = normalizeLabels(item.remove_labels);
       let action;
       let result;
-      if (item.issue_number && (item.replace_issue_body || item.set_issue_body)) {
+      if (item.issue_number && item.comment_body) {
+        const issue_number = Number(item.issue_number);
+        if (!Number.isInteger(issue_number) || issue_number <= 0) {
+          throw new Error('issue_number must be a positive integer when provided');
+        }
+        await github.rest.issues.createComment({
+          owner,
+          repo,
+          issue_number,
+          body: String(item.comment_body),
+        });
+        await addLabelsIfAny(github, owner, repo, issue_number, labels, core);
+        await removeLabelsIfAny(github, owner, repo, issue_number, removeLabels, core);
+        action = `commented #${issue_number}`;
+        result = `https://github.com/${owner}/${repo}/issues/${issue_number}`;
+      } else if (item.issue_number && (item.replace_issue_body || item.set_issue_body)) {
         const issue_number = Number(item.issue_number);
         if (!Number.isInteger(issue_number) || issue_number <= 0) {
           throw new Error('issue_number must be a positive integer when provided');
@@ -147,6 +178,7 @@ module.exports = async ({github, context, core}) => {
         }
         await github.rest.issues.update({owner, repo, issue_number, body});
         await addLabelsIfAny(github, owner, repo, issue_number, labels, core);
+        await removeLabelsIfAny(github, owner, repo, issue_number, removeLabels, core);
         action = `edited #${issue_number}`;
         result = `https://github.com/${owner}/${repo}/issues/${issue_number}`;
       } else if (item.issue_number) {
@@ -161,6 +193,7 @@ module.exports = async ({github, context, core}) => {
           body: buildUpdateComment(item, name),
         });
         await addLabelsIfAny(github, owner, repo, issue_number, labels, core);
+        await removeLabelsIfAny(github, owner, repo, issue_number, removeLabels, core);
         action = `updated #${issue_number}`;
         result = `https://github.com/${owner}/${repo}/issues/${issue_number}`;
       } else {
@@ -178,7 +211,7 @@ module.exports = async ({github, context, core}) => {
       const processedName = `${now.replace(/[:.]/g, '-')}-${slugify(name.replace(/\.json$/, ''))}.json`;
       const dst = path.join(processedDir, processedName);
       fs.renameSync(src, dst);
-      const record = {time: now, file: name, action, result, labels};
+      const record = {time: now, file: name, action, result, labels, remove_labels: removeLabels};
       fs.appendFileSync(jsonlPath, JSON.stringify(record) + '\n');
       fs.appendFileSync(logPath, `| ${now} | ${name} | ${action} | ${result} |\n`);
       core.info(`${action}: ${result}`);

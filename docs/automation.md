@@ -38,6 +38,8 @@ Workflow: `.github/workflows/issue-intake.yml`
 - Permission model: the local Agent only needs git push access; the workflow uses the repository `GITHUB_TOKEN` with `issues: write` to create or update GitHub Issues.
 - New issue: provide `title`, `labels`, `original_submission`, optional `summary`, `body`, `acceptance_criteria`, `next_step`.
 - Existing issue update / duplicate feedback: provide `issue_number`, `labels`, `original_submission`, optional `summary`, `body`, `next_step`; the workflow appends a comment and applies labels.
+- Direct review comment: provide `issue_number` and `comment_body`; the workflow writes `comment_body` verbatim as an Issue comment. This is the preferred path for 阿强's detailed PRD Review so group chat only receives a short summary.
+- Optional label changes on update/comment: `labels` adds labels; `remove_labels` removes labels such as `status/prd-review` after a Review result is posted.
 - Processed files move to `intake/processed/`; failed files move to `intake/failed/`.
 - Audit logs are written to `logs/issue-intake-runs.md` and `data/issue-intake-log.jsonl`.
 
