@@ -10,3 +10,4 @@
 | 2026-09-08T11:03:08.735Z | status/prd-review | 2 | 2 | 2 | wrote data/prd-review-candidates.json; ready 2/2 |
 | 2026-09-08T11:06:50.525Z | status/prd-review | 2 | 2 | 2 | wrote data/prd-review-candidates.json; ready 2/2 |
 | 2026-09-08T11:09:26.847Z | status/prd-review | 2 | 1 | 1 | wrote data/prd-review-candidates.json; ready 1/1 |
+| 2026-09-08T11:11:20.903Z | status/prd-review | 2 | 2 | 2 | wrote data/prd-review-candidates.json; ready 2/2 |
