@@ -10,3 +10,5 @@
 | 2026-09-08T07:53:27.843Z | 20260908T075236Z-append-image-attachment-issue-4.json | updated #4 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/4 |
 | 2026-09-08T07:57:55.705Z | 20260908T075705Z-remove-verbatim-label-issue-4.json | edited #4 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/4 |
 | 2026-09-08T07:57:55.705Z | 20260908T075706Z-remove-verbatim-label-issue-3.json | edited #3 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/3 |
+| 2026-09-08T08:06:11.729Z | 20260908T080542Z-restore-verbatim-label-issue-4.json | edited #4 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/4 |
+| 2026-09-08T08:06:11.729Z | 20260908T080543Z-restore-verbatim-label-issue-3.json | edited #3 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/3 |
