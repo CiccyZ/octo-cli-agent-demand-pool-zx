@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-08T11:36:38.926Z",
+  "generated_at": "2026-09-08T11:37:54.323Z",
   "scan_rule": {
     "label": "status/prd-review",
     "max_per_run": 2,
     "sort": "oldest updated_at first",
     "purpose": "candidate discovery only; final PRD Review is performed by 阿强 OpenClaw cron"
   },
-  "total_open_prd_review_issues": 2,
+  "total_open_prd_review_issues": 3,
   "candidates": [
     {
       "number": 3,
