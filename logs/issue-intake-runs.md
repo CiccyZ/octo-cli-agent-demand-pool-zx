@@ -19,3 +19,6 @@
 | 2026-09-08T08:56:51.777Z | 20260908T085557Z-web-macos-message-display-abnormal.json | created #5 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/5 |
 | 2026-09-08T09:08:20.201Z | 20260908T090703Z-conversation-list-separator-ux.json | created #6 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/6 |
 | 2026-09-08T09:38:34.448Z | 20260908T093736Z-attach-prd-to-issue-6.json | edited #6 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/6 |
+| 2026-09-08T09:57:30.667Z | 20260908T095435Z-attach-prd-to-issue-3.json | edited #3 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/3 |
+| 2026-09-08T09:57:30.667Z | 20260908T095436Z-attach-prd-to-issue-4.json | edited #4 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/4 |
+| 2026-09-08T09:57:30.667Z | 20260908T095437Z-attach-prd-to-issue-5.json | edited #5 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/5 |
