@@ -1,0 +1,7 @@
+{
+  "issue_number": 4,
+  "labels": ["type/feature", "priority/P2", "status/review", "area/task-collab", "source/user-feedback"],
+  "replace_issue_body": [
+    {"from": "待补充", "to": "待补充"}
+  ]
+}
