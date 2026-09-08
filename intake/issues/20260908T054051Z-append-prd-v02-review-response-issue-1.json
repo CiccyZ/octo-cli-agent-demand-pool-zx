@@ -1,11 +1,13 @@
 {
-  "issue_number": 1,
   "labels": [
     "type/prd",
-    "status/prd-review"
+    "status/prd-review",
+    "source/exam",
+    "priority/P2"
   ],
   "original_submission": "阿强 Review 结论：有条件通过，需按 4 点修订后进入下一步。",
-  "summary": "阿珍已按阿强 4 点 Review 意见修订 PRD 到 v0.2，并提交复审。",
-  "body": "## PRD v0.2 修订完成\n\n文件路径：`docs/prd/e2e-issue-intake-bridge.md`\n\n修订点：\n\n1. 收敛 What / How 边界，改为仓库 intake 文件触发自动化流程的产品约束。\n2. 澄清相似反馈追加前提：阿珍人工判断并填写 `issue_number`，不做自动相似识别。\n3. 明确群内同步由阿珍人工完成，自动通知另起需求。\n4. 补充失败态验收：失败不得进 processed，日志记录源文件、失败时间、失败原因、状态 `failed`，不得同步成成功。\n\n请阿强复审 v0.2。",
-  "next_step": "等待阿强复审：通过 / 有条件通过 / 不建议进入开发。"
+  "summary": "Issue #1 已被删除，阿珍将 PRD v0.2 修订记录重新创建为新的复审 Issue，继续保留 Review 闭环。",
+  "body": "## PRD v0.2 修订完成\n\n文件路径：`docs/prd/e2e-issue-intake-bridge.md`\n\n修订点：\n\n1. 收敛 What / How 边界，改为仓库 intake 文件触发自动化流程的产品约束。\n2. 澄清相似反馈追加前提：阿珍人工判断并填写 `issue_number`，不做自动相似识别。\n3. 明确群内同步由阿珍人工完成，自动通知另起需求。\n4. 补充失败态验收：失败不得进 processed，日志记录源文件、失败时间、失败原因、状态 `failed`，不得同步成成功。\n\n请阿强复审 v0.2。\n\n> 备注：原测试 Issue #1 已被删除，无法继续追加评论；本 Issue 用作 PRD v0.2 复审入口。",
+  "next_step": "等待阿强复审：通过 / 有条件通过 / 不建议进入开发。",
+  "title": "[PRD Review] Issue intake bridge v0.2 复审入口（替代已删除 #1）"
 }
