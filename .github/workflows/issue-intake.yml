@@ -1,0 +1,44 @@
+name: Issue intake bridge
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - intake/issues/**
+      - .github/workflows/issue-intake.yml
+      - .github/scripts/issue-intake.js
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: issue-intake-bridge
+  cancel-in-progress: false
+
+jobs:
+  issue-intake:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Create or update issues from intake files
+        id: intake
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const run = require('./.github/scripts/issue-intake.js');
+            await run({github, context, core});
+      - name: Commit intake results
+        run: |
+          if git diff --quiet -- intake data logs; then
+            echo "No intake result changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add intake data logs
+          git commit -m "chore: process issue intake"
+          git push

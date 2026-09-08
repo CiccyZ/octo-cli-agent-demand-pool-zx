@@ -28,3 +28,17 @@ The scan is intentionally change-driven. No-change scans are visible in the Acti
 ## Verification note
 
 Push-triggered runs are smoke checks to verify the workflow after configuration changes. The production scanning mechanism remains the scheduled cron (`*/10 * * * *`), which does not depend on manual chat triggers.
+
+## Issue intake bridge
+
+Workflow: `.github/workflows/issue-intake.yml`
+
+- Trigger: push to `main` when `intake/issues/**` changes, or manual dispatch.
+- Input source: JSON files under `intake/issues/`.
+- Permission model: the local Agent only needs git push access; the workflow uses the repository `GITHUB_TOKEN` with `issues: write` to create or update GitHub Issues.
+- New issue: provide `title`, `labels`, `original_submission`, optional `summary`, `body`, `acceptance_criteria`, `next_step`.
+- Existing issue update / duplicate feedback: provide `issue_number`, `labels`, `original_submission`, optional `summary`, `body`, `next_step`; the workflow appends a comment and applies labels.
+- Processed files move to `intake/processed/`; failed files move to `intake/failed/`.
+- Audit logs are written to `logs/issue-intake-runs.md` and `data/issue-intake-log.jsonl`.
+
+This bridge is the fallback for environments where the Agent cannot safely store a GitHub PAT. It preserves the exam requirement that user original submissions must be stored verbatim in Issues, while keeping credentials out of chat and local prompt context.
