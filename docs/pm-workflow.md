@@ -42,5 +42,6 @@
 
 ## 角色边界
 
-- 阿珍负责 Review 流转和 PRD 修改。
-- 阿强负责 Review 裁决和复审。
+- 阿珍负责收单、原文入 Issue、分类打标签、PRD 初稿、Review 流转、按阿强意见修改 PRD、维护状态和回群同步。
+- 阿强负责正式 PRD Review、Review 裁决和复审。
+- 阿珍不输出正式 Review 结论；阿强不抢需求入口和 PRD 修改 ownership。
