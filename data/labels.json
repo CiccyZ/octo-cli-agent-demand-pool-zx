@@ -1,13 +1,13 @@
 [
   {
     "name": "type/bug",
-    "color": "d73a4a",
-    "description": "Bug feedback"
+    "color": "b60205",
+    "description": "Bug / defect"
   },
   {
     "name": "type/feature",
-    "color": "a2eeef",
-    "description": "Feature or enhancement request"
+    "color": "1d76db",
+    "description": "Feature or product requirement"
   },
   {
     "name": "type/prd",
@@ -20,44 +20,59 @@
     "description": "PRD review record"
   },
   {
-    "name": "source/exam",
-    "color": "fbca04",
-    "description": "Raised during AINOL exam"
-  },
-  {
-    "name": "source/user-feedback",
-    "color": "bfdadc",
-    "description": "Raised from user feedback"
+    "name": "type/ux",
+    "color": "d4c5f9",
+    "description": "UX / experience improvement"
   },
   {
     "name": "priority/P0",
     "color": "b60205",
-    "description": "Critical priority: blocks exam or core workflow"
+    "description": "P0 blocker: blocks exam or core workflow"
   },
   {
     "name": "priority/P1",
     "color": "d93f0b",
-    "description": "High priority: should be handled soon"
+    "description": "P1 high priority: should be handled soon"
   },
   {
     "name": "priority/P2",
     "color": "fbca04",
-    "description": "Medium priority: normal queue"
+    "description": "P2 medium priority: normal queue"
   },
   {
     "name": "priority/P3",
-    "color": "0e8a16",
-    "description": "Low priority: nice to have"
+    "color": "cfd3d7",
+    "description": "P3 low priority: nice to have"
   },
   {
-    "name": "status/new",
-    "color": "cfd3d7",
-    "description": "New intake"
+    "name": "status/closed",
+    "color": "eeeeee",
+    "description": "Closed or no action needed"
+  },
+  {
+    "name": "status/done",
+    "color": "0e8a16",
+    "description": "已完成"
+  },
+  {
+    "name": "status/in-progress",
+    "color": "6f42c1",
+    "description": "开发中"
   },
   {
     "name": "status/needs-info",
     "color": "fef2c0",
     "description": "Waiting for more information"
+  },
+  {
+    "name": "status/needs-revision",
+    "color": "f9d0c4",
+    "description": "Needs revision after review"
+  },
+  {
+    "name": "status/new",
+    "color": "cfd3d7",
+    "description": "New intake (legacy; prefer status/review for reviewed intake)"
   },
   {
     "name": "status/prd-drafting",
@@ -70,18 +85,48 @@
     "description": "Waiting for PRD review"
   },
   {
-    "name": "status/needs-revision",
-    "color": "f9d0c4",
-    "description": "Needs revision after review"
-  },
-  {
     "name": "status/ready",
     "color": "0e8a16",
     "description": "Ready for next step"
   },
   {
-    "name": "status/closed",
-    "color": "eeeeee",
-    "description": "Closed or no action needed"
+    "name": "status/review",
+    "color": "1d76db",
+    "description": "待评审"
+  },
+  {
+    "name": "status/testing",
+    "color": "0e8aaf",
+    "description": "待测试"
+  },
+  {
+    "name": "status/wontfix",
+    "color": "586069",
+    "description": "废弃 / explicitly not planned"
+  },
+  {
+    "name": "area/agent-automation",
+    "color": "c2e0c6",
+    "description": "Agent 自动化模块: Bot / Agent / CLI / GitHub Actions / external automation"
+  },
+  {
+    "name": "area/docs-permission",
+    "color": "c5def5",
+    "description": "文档权限模块: Docs / Drive / Space / document auth / permission inheritance"
+  },
+  {
+    "name": "area/task-collab",
+    "color": "d4c5f9",
+    "description": "任务协作模块: Loop / Project / Expert / Squad / task workflow"
+  },
+  {
+    "name": "source/exam",
+    "color": "fbca04",
+    "description": "Raised during AINOL exam"
+  },
+  {
+    "name": "source/user-feedback",
+    "color": "bfdadc",
+    "description": "Raised from user feedback"
   }
 ]
