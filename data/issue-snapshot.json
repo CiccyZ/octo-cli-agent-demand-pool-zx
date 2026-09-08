@@ -4,12 +4,14 @@
     "title": "支持 Space 级别默认授权给某 bot 访问新文档",
     "state": "open",
     "labels": [
+      "area/docs-permission",
       "priority/P2",
       "source/user-feedback",
       "status/new",
+      "status/review",
       "type/feature"
     ],
-    "updated_at": "2026-09-08T08:26:41Z",
+    "updated_at": "2026-09-08T08:46:20Z",
     "created_at": "2026-09-08T07:46:22Z",
     "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/3"
   },
@@ -18,13 +20,30 @@
     "title": "Loop 任务已完成列表支持按完成时间倒序排列",
     "state": "open",
     "labels": [
+      "area/task-collab",
       "priority/P2",
       "source/user-feedback",
       "status/new",
+      "status/review",
       "type/feature"
     ],
-    "updated_at": "2026-09-08T08:26:40Z",
+    "updated_at": "2026-09-08T08:46:21Z",
     "created_at": "2026-09-08T07:46:22Z",
     "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/4"
+  },
+  {
+    "number": 5,
+    "title": "Web/macOS 1.0.12 收到他人消息时显示异常",
+    "state": "open",
+    "labels": [
+      "area/agent-automation",
+      "priority/P1",
+      "source/user-feedback",
+      "status/review",
+      "type/bug"
+    ],
+    "updated_at": "2026-09-08T08:56:52Z",
+    "created_at": "2026-09-08T08:56:52Z",
+    "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/5"
   }
 ]
