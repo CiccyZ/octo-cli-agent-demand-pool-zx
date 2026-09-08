@@ -17,3 +17,4 @@
 | 2026-09-08T08:46:19.306Z | 20260908T084403Z-optimize-labels-issue-3.json | edited #3 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/3 |
 | 2026-09-08T08:46:19.306Z | 20260908T084404Z-optimize-labels-issue-4.json | edited #4 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/4 |
 | 2026-09-08T08:56:51.777Z | 20260908T085557Z-web-macos-message-display-abnormal.json | created #5 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/5 |
+| 2026-09-08T09:08:20.201Z | 20260908T090703Z-conversation-list-separator-ux.json | created #6 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/6 |
