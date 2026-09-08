@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-09-08T10:23:45.934Z",
+  "scan_rule": {
+    "label": "status/prd-review",
+    "max_per_run": 2,
+    "sort": "oldest updated_at first",
+    "purpose": "bootstrap placeholder"
+  },
+  "total_open_prd_review_issues": 4,
+  "candidates": [
+    {
+      "number": 6,
+      "title": "对话选择栏缺少明显分割线，多个对话时不易定位",
+      "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/6",
+      "labels": [
+        "area/agent-automation",
+        "priority/P2",
+        "source/user-feedback",
+        "status/prd-review",
+        "status/review",
+        "type/ux"
+      ],
+      "updated_at": "2026-09-08T09:38:35Z",
+      "prd_path": null,
+      "prd_url": null,
+      "self_check": null,
+      "evidence": {
+        "issue_link": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/6",
+        "prd_path": null,
+        "self_check_present": false
+      },
+      "ready_for_review": false,
+      "scan_notes": "bootstrap placeholder; waiting for GitHub Actions prd-review-scan to populate PRD evidence"
+    },
+    {
+      "number": 3,
+      "title": "支持 Space 级别默认授权给某 bot 访问新文档",
+      "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/3",
+      "labels": [
+        "area/docs-permission",
+        "priority/P2",
+        "source/user-feedback",
+        "status/new",
+        "status/prd-review",
+        "status/review",
+        "type/feature"
+      ],
+      "updated_at": "2026-09-08T09:57:31Z",
+      "prd_path": null,
+      "prd_url": null,
+      "self_check": null,
+      "evidence": {
+        "issue_link": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/3",
+        "prd_path": null,
+        "self_check_present": false
+      },
+      "ready_for_review": false,
+      "scan_notes": "bootstrap placeholder; waiting for GitHub Actions prd-review-scan to populate PRD evidence"
+    }
+  ]
+}

@@ -7,6 +7,7 @@ on:
       - intake/issues/**
       - .github/workflows/issue-intake.yml
       - .github/scripts/issue-intake.js
+      - .github/scripts/prd-review-scan.js
   workflow_dispatch:
 
 permissions:
@@ -30,6 +31,15 @@ jobs:
         with:
           script: |
             const run = require('./.github/scripts/issue-intake.js');
+            await run({github, context, core});
+      - name: Refresh PRD Review candidates
+        if: always()
+        uses: actions/github-script@v7
+        env:
+          MAX_PRD_REVIEW_ISSUES: '2'
+        with:
+          script: |
+            const run = require('./.github/scripts/prd-review-scan.js');
             await run({github, context, core});
       - name: Commit intake results
         if: always()
