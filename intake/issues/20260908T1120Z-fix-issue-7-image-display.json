@@ -1,0 +1,12 @@
+{
+  "issue_number": 7,
+  "set_issue_body": "<!-- azhen-intake-file: 20260908T105640Z-contact-card-show-email.json -->\n\n## 用户原始提交\n\n提交人：曾茜 / 3b88a2065e8644ed98f4e651dad313e9\n提交时间：Tue 2026-09-08 18:56:40 GMT+8\n\n```text\n@阿珍 [图片]通讯录的联系人名片里，是否可以显示“邮箱”？现在同名的人没法识别哪个是我要联系的人\n```\n\n![通讯录联系人名片缺少邮箱展示截图](https://raw.githubusercontent.com/CiccyZ/octo-cli-agent-demand-pool-zx/main/assets/issue-attachments/contact-card-email/contact-card-no-email.png)\n\n## 错误描述\n\n通讯录联系人名片当前未展示邮箱等可辅助识别的信息。当存在同名联系人时，用户仅凭姓名、头像、实名状态、在线状态等信息无法确认哪个才是目标联系人，容易联系错人或需要额外返回其他页面核对。\n\n## 根本原因\n\n待确认。初步判断是联系人名片的信息展示字段不足，缺少用于区分同名用户的邮箱等稳定身份信息。\n\n## 预期行为\n\n联系人名片应展示邮箱等可辅助识别同名联系人的信息；当多个联系人同名时，用户能在名片弹窗中直接判断要联系的是哪一个人。\n\n## 复现步骤\n\n- 打开 Octo 通讯录。\n- 点击某个联系人，进入联系人名片弹窗。\n- 观察名片中当前仅展示头像、实名状态、Octo ID/在线状态、备注等信息，未展示邮箱。\n- 当通讯录中存在同名联系人时，用户无法仅凭当前名片信息确认目标联系人。\n\n## 建议的修复方案\n\n在通讯录联系人名片中增加邮箱展示字段，优先展示用户已公开或组织内可见的邮箱；若邮箱不可见或未设置，应给出明确占位状态。展示时需要遵守隐私与权限规则，避免向无权限用户暴露邮箱。\n\n## 环境\n\n- 产品模块：通讯录 / 联系人名片\n- 场景：同名联系人识别与发起联系前确认\n- 反馈来源：Octo 群消息 2097277937580412928\n- 截图：[assets/issue-attachments/contact-card-email/contact-card-no-email.png](https://raw.githubusercontent.com/CiccyZ/octo-cli-agent-demand-pool-zx/main/assets/issue-attachments/contact-card-email/contact-card-no-email.png)\n- 客户端/版本：待补充\n\n## 验收标准\n\n- 联系人名片中可以看到邮箱字段，且展示位置清晰，不影响现有备注、实名、在线状态等信息阅读。\n- 当通讯录中存在同名联系人时，用户可以通过邮箱直接区分不同联系人。\n- 邮箱未设置、无权限查看或用户隐私设置不允许展示时，有明确状态提示，不展示错误或空白信息。\n- 邮箱展示遵守当前产品的组织、好友、隐私与权限规则，不向无权限用户泄露邮箱。\n- 移动端名片弹窗在增加邮箱后仍保持布局稳定，底部操作按钮不被遮挡。\n\n## 下一步\n\n建议产品先确认邮箱字段的可见范围与隐私权限规则，再进入设计和开发评估。\n\n---\n由 GitHub Actions Issue intake bridge 从 `intake/issues/` 自动创建。",
+  "labels": [
+    "type/feature",
+    "type/ux",
+    "priority/P2",
+    "status/review",
+    "area/task-collab",
+    "source/user-feedback"
+  ]
+}
