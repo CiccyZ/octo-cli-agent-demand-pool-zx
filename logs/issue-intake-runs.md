@@ -22,3 +22,4 @@
 | 2026-09-08T09:57:30.667Z | 20260908T095435Z-attach-prd-to-issue-3.json | edited #3 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/3 |
 | 2026-09-08T09:57:30.667Z | 20260908T095436Z-attach-prd-to-issue-4.json | edited #4 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/4 |
 | 2026-09-08T09:57:30.667Z | 20260908T095437Z-attach-prd-to-issue-5.json | edited #5 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/5 |
+| 2026-09-08T10:58:01.306Z | 20260908T105640Z-contact-card-show-email.json | created #7 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/7 |
