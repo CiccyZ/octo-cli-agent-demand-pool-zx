@@ -1,0 +1,14 @@
+{
+  "title": "支持 Space 级别默认授权给某 bot 访问新文档",
+  "labels": ["type/feature", "priority/P2", "status/new", "source/user-feedback"],
+  "original_submission": "@阿珍 Octo是否能支持\"space 级别默认授权给某 bot\"，而不是每份新文档都要手动分享一次",
+  "summary": "用户询问并隐含提出一个产品能力诉求：希望 Octo 支持在 Space 级别为某个 bot 配置默认文档访问授权，使该 Space 下新建文档无需逐份手动分享给 bot。当前 octo-cli 可见能力更偏向逐文档成员/分享配置，以及 Drive Space 成员授权；未发现针对 docs/html 文档的 Space 级别默认 bot 授权机制。\n\n当前可核验依据：\n- octo-cli docs 成员授权示例是按 doc 维度执行：`octo-cli docs members set doc-123 --uid u-1 --role writer`，来源 `Mininglamp-OSS/octo-cli README.md#L165-L169`。\n- docs share 也是按 docId 的 `/v1/bot/docs/{docId}/share` 子资源 get/set，来源 `cmd/service/docs_test.go#L84-L90`、`cmd/service/docs_test.go#L646-L663`、`cmd/service/docs_test.go#L682-L712`。\n- html 文档说明为 per-doc share codes 与 per-uid grants，来源 `README.md#L40-L41`、`README.md#L217-L218`。\n- Drive Space 成员授权存在，但文档链接只是进入 docs 权限系统，不等于授予文档权限，来源 `README.md#L249-L251`、`docs/octo-cli-design.md#L218-L220`、`docs/octo-cli-design.md#L327-L333`。\n\n初步判断：这是一个降低 bot 接入/自动化使用成本的 feature request。",
+  "acceptance_criteria": [
+    "管理员可以在 Space 级别为指定 bot 配置默认文档权限（例如 read/comment/write 之一，具体角色需产品定义）。",
+    "配置生效后，该 Space 下新建文档自动让该 bot 拥有对应访问权限，无需逐份手动分享。",
+    "已有文档是否批量补授权需要有明确产品口径：不处理、可选批量补齐，或仅对新文档生效。",
+    "权限变更、撤销和审计口径清晰：谁配置、何时生效、影响哪些 bot/文档可追踪。",
+    "若与现有 docs/html/drive 权限模型存在边界差异，需在 UI/API/CLI 文档中明确说明。"
+  ],
+  "next_step": "等待产品确认是否进入 PRD 草拟；建议优先澄清作用范围（docs、html、drive mounted docs 是否都覆盖）、默认角色、是否影响历史文档。"
+}
