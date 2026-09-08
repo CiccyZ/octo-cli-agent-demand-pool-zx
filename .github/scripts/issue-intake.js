@@ -24,37 +24,53 @@ function normalizeLabels(labels) {
   return [...new Set(labels.map(String).map(s => s.trim()).filter(Boolean))];
 }
 
-function buildCreateBody(item, filename) {
+function formatValue(value) {
+  if (value == null || value === '') return '待补充';
+  if (Array.isArray(value)) return value.map(x => `- ${x}`).join('\n') || '待补充';
+  return String(value);
+}
+
+function section(title, value) {
+  return `## ${title}\n\n${formatValue(value)}`;
+}
+
+function originalSubmissionBlock(item) {
+  const lines = [];
+  if (item.reporter_name || item.reporter_uid || item.reporter_octo) {
+    const reporter = [item.reporter_name, item.reporter_uid || item.reporter_octo]
+      .filter(Boolean)
+      .join(' / ');
+    lines.push(`提交人：${reporter}`);
+  }
+  if (item.message_time) lines.push(`提交时间：${item.message_time}`);
+  if (item.attachments) lines.push(`附件：${formatValue(item.attachments)}`);
+  if (lines.length) lines.push('');
+  lines.push(fence(item.original_submission || '待补充'));
+  return lines.join('\n');
+}
+
+function buildIssueBody(item, filename) {
   const sections = [];
   sections.push(`<!-- azhen-intake-file: ${filename} -->`);
-  if (item.original_submission) {
-    sections.push('## 用户原始反馈\n\n' + fence(item.original_submission));
-  }
-  if (item.summary) sections.push('## 结构化摘要\n\n' + String(item.summary));
+  sections.push(section('用户原始提交', originalSubmissionBlock(item)));
+  sections.push(section('错误描述', item.error_description || item.summary));
+  sections.push(section('根本原因', item.root_cause));
+  sections.push(section('预期行为', item.expected_behavior));
+  sections.push(section('复现步骤', item.reproduction_steps));
+  sections.push(section('建议的修复方案', item.proposed_fix));
+  sections.push(section('环境', item.environment));
   if (item.body) sections.push(String(item.body));
-  if (item.acceptance_criteria) {
-    const lines = Array.isArray(item.acceptance_criteria)
-      ? item.acceptance_criteria.map(x => `- ${x}`).join('\n')
-      : String(item.acceptance_criteria);
-    sections.push('## 初步验收口径\n\n' + lines);
-  }
-  if (item.next_step) sections.push('## 下一步\n\n' + String(item.next_step));
-  sections.push('---\n由 GitHub Actions Issue intake bridge 从 `intake/issues/` 自动创建。');
+  if (item.acceptance_criteria) sections.push(section('验收标准', item.acceptance_criteria));
+  if (item.next_step) sections.push(section('下一步', item.next_step));
   return sections.filter(Boolean).join('\n\n');
 }
 
+function buildCreateBody(item, filename) {
+  return buildIssueBody(item, filename) + '\n\n---\n由 GitHub Actions Issue intake bridge 从 `intake/issues/` 自动创建。';
+}
+
 function buildUpdateComment(item, filename) {
-  const sections = [];
-  sections.push(`<!-- azhen-intake-file: ${filename} -->`);
-  sections.push('## 追加反馈');
-  if (item.original_submission) {
-    sections.push('### 用户原始反馈\n\n' + fence(item.original_submission));
-  }
-  if (item.summary) sections.push('### 结构化摘要\n\n' + String(item.summary));
-  if (item.body) sections.push(String(item.body));
-  if (item.next_step) sections.push('### 下一步\n\n' + String(item.next_step));
-  sections.push('---\n由 GitHub Actions Issue intake bridge 从 `intake/issues/` 自动追加。');
-  return sections.filter(Boolean).join('\n\n');
+  return buildIssueBody(item, filename).replace(/^## /gm, '### ').replace(/^### 用户原始提交/, '## 追加反馈\n\n### 用户原始提交') + '\n\n---\n由 GitHub Actions Issue intake bridge 从 `intake/issues/` 自动追加。';
 }
 
 function readJson(filePath) {
@@ -107,22 +123,27 @@ module.exports = async ({github, context, core}) => {
       const labels = normalizeLabels(item.labels);
       let action;
       let result;
-      if (item.issue_number && item.replace_issue_body) {
+      if (item.issue_number && (item.replace_issue_body || item.set_issue_body)) {
         const issue_number = Number(item.issue_number);
         if (!Number.isInteger(issue_number) || issue_number <= 0) {
           throw new Error('issue_number must be a positive integer when provided');
         }
-        const replacements = Array.isArray(item.replace_issue_body)
-          ? item.replace_issue_body
-          : [item.replace_issue_body];
-        const issue = await github.rest.issues.get({owner, repo, issue_number});
-        let body = String(issue.data.body || '');
-        for (const replacement of replacements) {
-          if (!replacement || typeof replacement !== 'object') throw new Error('replace_issue_body entries must be objects');
-          const from = String(replacement.from ?? '');
-          const to = String(replacement.to ?? '');
-          if (!from) throw new Error('replace_issue_body.from is required');
-          body = body.split(from).join(to);
+        let body;
+        if (item.set_issue_body) {
+          body = String(item.set_issue_body);
+        } else {
+          const replacements = Array.isArray(item.replace_issue_body)
+            ? item.replace_issue_body
+            : [item.replace_issue_body];
+          const issue = await github.rest.issues.get({owner, repo, issue_number});
+          body = String(issue.data.body || '');
+          for (const replacement of replacements) {
+            if (!replacement || typeof replacement !== 'object') throw new Error('replace_issue_body entries must be objects');
+            const from = String(replacement.from ?? '');
+            const to = String(replacement.to ?? '');
+            if (!from) throw new Error('replace_issue_body.from is required');
+            body = body.split(from).join(to);
+          }
         }
         await github.rest.issues.update({owner, repo, issue_number, body});
         await addLabelsIfAny(github, owner, repo, issue_number, labels, core);
