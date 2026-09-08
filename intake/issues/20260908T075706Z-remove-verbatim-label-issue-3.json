@@ -1,0 +1,6 @@
+{
+  "issue_number": 3,
+  "replace_issue_body": [
+    {"from": "用户原始提交（原封不动）", "to": "用户原始反馈"}
+  ]
+}

@@ -28,7 +28,7 @@ function buildCreateBody(item, filename) {
   const sections = [];
   sections.push(`<!-- azhen-intake-file: ${filename} -->`);
   if (item.original_submission) {
-    sections.push('## 用户原始提交（原封不动）\n\n' + fence(item.original_submission));
+    sections.push('## 用户原始反馈\n\n' + fence(item.original_submission));
   }
   if (item.summary) sections.push('## 结构化摘要\n\n' + String(item.summary));
   if (item.body) sections.push(String(item.body));
@@ -48,7 +48,7 @@ function buildUpdateComment(item, filename) {
   sections.push(`<!-- azhen-intake-file: ${filename} -->`);
   sections.push('## 追加反馈');
   if (item.original_submission) {
-    sections.push('### 用户原始提交（原封不动）\n\n' + fence(item.original_submission));
+    sections.push('### 用户原始反馈\n\n' + fence(item.original_submission));
   }
   if (item.summary) sections.push('### 结构化摘要\n\n' + String(item.summary));
   if (item.body) sections.push(String(item.body));
@@ -107,7 +107,28 @@ module.exports = async ({github, context, core}) => {
       const labels = normalizeLabels(item.labels);
       let action;
       let result;
-      if (item.issue_number) {
+      if (item.issue_number && item.replace_issue_body) {
+        const issue_number = Number(item.issue_number);
+        if (!Number.isInteger(issue_number) || issue_number <= 0) {
+          throw new Error('issue_number must be a positive integer when provided');
+        }
+        const replacements = Array.isArray(item.replace_issue_body)
+          ? item.replace_issue_body
+          : [item.replace_issue_body];
+        const issue = await github.rest.issues.get({owner, repo, issue_number});
+        let body = String(issue.data.body || '');
+        for (const replacement of replacements) {
+          if (!replacement || typeof replacement !== 'object') throw new Error('replace_issue_body entries must be objects');
+          const from = String(replacement.from ?? '');
+          const to = String(replacement.to ?? '');
+          if (!from) throw new Error('replace_issue_body.from is required');
+          body = body.split(from).join(to);
+        }
+        await github.rest.issues.update({owner, repo, issue_number, body});
+        await addLabelsIfAny(github, owner, repo, issue_number, labels, core);
+        action = `edited #${issue_number}`;
+        result = `https://github.com/${owner}/${repo}/issues/${issue_number}`;
+      } else if (item.issue_number) {
         const issue_number = Number(item.issue_number);
         if (!Number.isInteger(issue_number) || issue_number <= 0) {
           throw new Error('issue_number must be a positive integer when provided');
