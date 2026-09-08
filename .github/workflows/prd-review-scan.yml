@@ -8,9 +8,11 @@ on:
     branches: [main]
     paths:
       - .github/workflows/prd-review-scan.yml
+      - .github/workflows/issue-intake.yml
       - .github/scripts/prd-review-scan.js
       - docs/prd/**
       - data/labels.json
+      - intake/processed/**
 
 permissions:
   contents: write
