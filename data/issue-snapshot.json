@@ -77,8 +77,24 @@
       "type/feature",
       "type/ux"
     ],
-    "updated_at": "2026-09-08T10:58:01Z",
+    "updated_at": "2026-09-08T11:21:21Z",
     "created_at": "2026-09-08T10:58:01Z",
     "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/7"
+  },
+  {
+    "number": 8,
+    "title": "会话页搜索联系人后左侧会话列表未同步定位到目标会话",
+    "state": "open",
+    "labels": [
+      "area/agent-automation",
+      "priority/P2",
+      "source/user-feedback",
+      "status/ready",
+      "type/feature",
+      "type/ux"
+    ],
+    "updated_at": "2026-09-08T11:37:53Z",
+    "created_at": "2026-09-08T11:29:48Z",
+    "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/8"
   }
 ]
