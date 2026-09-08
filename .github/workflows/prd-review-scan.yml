@@ -1,0 +1,49 @@
+name: PRD Review candidate scan
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/prd-review-scan.yml
+      - .github/scripts/prd-review-scan.js
+      - docs/prd/**
+      - data/labels.json
+
+permissions:
+  contents: write
+  issues: read
+
+concurrency:
+  group: prd-review-candidate-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Scan status/prd-review issues
+        id: scan
+        uses: actions/github-script@v7
+        env:
+          MAX_PRD_REVIEW_ISSUES: '2'
+        with:
+          script: |
+            const run = require('./.github/scripts/prd-review-scan.js');
+            await run({github, context, core});
+      - name: Commit scan output
+        run: |
+          if git diff --quiet -- data/prd-review-candidates.json logs/prd-review-scan-runs.md; then
+            echo "No PRD review scan output changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/prd-review-candidates.json logs/prd-review-scan-runs.md
+          git commit -m "chore: update prd review scan output"
+          git push

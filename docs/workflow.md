@@ -31,13 +31,20 @@
 5. **PRD 草案与修改**
    - 阿珍负责把需求整理成 PRD 草案。
    - PRD 只写 What，不写 How。
+   - PRD 完成后，阿珍必须先自检；自检通过后，把 Issue 状态标记为 `status/prd-review`。
+   - 阿珍不再逐条手动 @ 阿强催审；进入 `status/prd-review` 后由阿强定时扫描。
    - 被打回时，阿珍根据阿强 Review 意见逐条修改，并在 Issue 中记录修改说明、版本变化、剩余待确认问题。
 
-6. **PRD Review**
+6. **PRD Review 自动扫描**
    - 阿强负责正式 PRD Review。
+   - 阿强侧每 2 小时自动扫描 GitHub Issue 中 `status/prd-review` 的待审 PRD。
+   - 每轮最多处理 2 个 Issue，避免触发 GitHub 限流。
+   - 只有同时满足以下条件的 Issue 才进入正式 Review：Issue 链接、PRD 路径、自检结果齐全。
+   - Review 结果必须写明证据来源：Issue 链接、PRD 路径、自检结果。
    - 阿强给出：通过 / 有条件通过 / 不建议进入开发。
-   - Review 不通过时，Issue 状态由阿珍更新为 `status/needs-revision` 或 `status/needs-info`。
-   - 修改后由阿强复审。
+   - 有条件通过或不建议进入开发时，阿强 @ 阿珍修改，并给出用户故事、交互、边界、验收标准等细化修正建议。
+   - 修改后由阿珍重新提交，等待阿强后续自动扫描复审。
+   - 通过后进入可转研发候选；最终是否排期仍由曾茜 / 产品负责人确认。
 
 7. **回群同步**
    - 创建 Issue、状态变化、Review 返回、PRD 修改完成等有效变化，由阿珍回考试群同步：Issue 链接、摘要、当前状态、下一步。

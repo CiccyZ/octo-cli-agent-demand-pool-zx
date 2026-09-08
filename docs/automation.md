@@ -42,3 +42,22 @@ Workflow: `.github/workflows/issue-intake.yml`
 - Audit logs are written to `logs/issue-intake-runs.md` and `data/issue-intake-log.jsonl`.
 
 This bridge is the fallback for environments where the Agent cannot safely store a GitHub PAT. It preserves the exam requirement that user original submissions must be stored verbatim in Issues, while keeping credentials out of chat and local prompt context.
+
+## PRD Review candidate scan
+
+Workflow: `.github/workflows/prd-review-scan.yml`
+
+- Runs every 2 hours by GitHub cron: `0 */2 * * *`.
+- Reads open GitHub Issues with `status/prd-review`.
+- Processes at most 2 candidate issues per run to reduce GitHub API pressure.
+- Writes candidate evidence to `data/prd-review-candidates.json`.
+- Writes audit rows to `logs/prd-review-scan-runs.md`.
+- This repository workflow only discovers and records candidates; the actual PRD Review is performed by 阿强's OpenClaw cron so the review can apply the PRD quality gate and @ 阿珍 with changes.
+
+Review evidence requirements:
+
+- Issue link.
+- PRD path.
+- PRD self-check result.
+
+Only issues with all three evidence items should receive a formal Review conclusion. Missing evidence should be treated as a material gap and returned to 阿珍 to补齐.
