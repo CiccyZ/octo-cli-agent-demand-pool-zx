@@ -1,16 +1,16 @@
 [
   {
-    "number": 1,
-    "title": "[E2E Test] 阿珍 GitHub Actions issue intake bridge 验证",
+    "number": 2,
+    "title": "[PRD Review] Issue intake bridge v0.2 复审入口（替代已删除 #1）",
     "state": "open",
     "labels": [
       "priority/P2",
       "source/exam",
-      "status/new",
-      "type/feature"
+      "status/prd-review",
+      "type/prd"
     ],
-    "updated_at": "2026-09-08T05:32:50Z",
-    "created_at": "2026-09-08T05:32:50Z",
-    "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/1"
+    "updated_at": "2026-09-08T05:46:10Z",
+    "created_at": "2026-09-08T05:46:10Z",
+    "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/2"
   }
 ]
