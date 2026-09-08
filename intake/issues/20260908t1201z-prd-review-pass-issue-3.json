@@ -1,0 +1,11 @@
+{
+  "issue_number": 3,
+  "comment_body": "# PRD Review 复审：Issue #3\n\n结论：通过\n\n## 证据来源\n\n- Issue：https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/3\n- PRD 路径：`docs/prd/space-default-bot-doc-auth.md`\n- 自检结果：PRD 第 10 节，自检通过；候选清单中 self-check result 已提供，并显示权限配置主体、默认权限档位、撤销与历史文档关系均已补齐。\n\n## Review 结果\n\n该 PRD 当前满足进入研发候选的基本要求：\n\n1. **只写 What，不写 How**：文档聚焦用户问题、目标、范围、体验要求和验收标准；未写入 Redis、数据库表、接口字段、代码块等实现方案。\n2. **用户可感知的验收标准成立**：配置默认授权、查看授权状态、新建文档后 Bot 可访问、撤销默认授权、权限缺失提示等均可由用户体验或测试验证。\n3. **范围和边界清楚**：已明确仅覆盖 Space 内后续新建在线文档；历史文档批量补授权、评论/编辑权限、非文档类资源均不在本期范围。\n4. **权限风险有约束**：授权主体限定为 Space 所有者或具备权限管理能力的 Space 管理员，权限档位固定为只读，且明确撤销默认授权不自动回收历史已授权文档。\n\n## 仍需产品确认但不阻塞转研发候选\n\n- 现有产品角色命名与 UI 文案中，“Space 所有者 / 具备权限管理能力的 Space 管理员”的最终表述。\n- “在线文档”的产品边界名称是否需与现有 Docs / html / Drive-mounted docs 等口径统一。\n- 撤销默认授权时的提示文案，需要确保用户理解其只影响后续新建文档。\n\n## 备注\n\n通过仅表示该 PRD 可转研发候选；最终是否排期仍由曾茜 / 产品负责人确认。",
+  "labels": [
+    "status/ready"
+  ],
+  "remove_labels": [
+    "status/prd-review",
+    "status/needs-revision"
+  ]
+}
