@@ -1,0 +1,13 @@
+{
+  "title": "[E2E Test] 阿珍 GitHub Actions issue intake bridge 验证",
+  "labels": ["type/feature", "priority/P2", "status/new", "source/exam"],
+  "original_submission": "@阿珍 开始测试，现在我是考官",
+  "summary": "端到端最小闭环测试：验证阿珍通过 git push intake JSON，触发 GitHub Actions 使用仓库 GITHUB_TOKEN 创建 GitHub Issue，并保留用户原始提交。",
+  "acceptance_criteria": [
+    "GitHub Actions 能从 intake/issues/ 读取 JSON 并创建 Issue。",
+    "Issue 正文包含用户原始提交，且原文未被改写。",
+    "Issue 带有 type/feature、priority/P2、status/new、source/exam 标签。",
+    "处理完成后 intake 文件被移动到 intake/processed/，并写入审计日志。"
+  ],
+  "next_step": "若 Issue 创建成功，阿珍回群同步 Issue 链接、状态和下一步。"
+}
