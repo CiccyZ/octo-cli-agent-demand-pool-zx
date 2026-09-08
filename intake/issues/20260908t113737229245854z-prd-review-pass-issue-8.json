@@ -1,0 +1,6 @@
+{
+  "issue_number": 8,
+  "comment_body": "# PRD Review 复审：Issue #8\n\n结论：通过\n\n## 证据来源\n\n- Issue：https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/8\n- PRD 路径：`docs/prd/conversation-search-list-position.md`\n- 自检结果：PRD 第 10 节，自检通过，且已补齐上轮 Review 的 3 个必改点\n\n## 复审结果\n\n上轮要求补齐的 3 个问题已处理：\n\n1. **端范围**：已收敛为 Web / macOS 端存在左侧会话列表的会话页面。\n2. **目标联系人不在左侧列表的边界**：已明确本期仅覆盖已存在会话条目的定位；未形成会话条目的创建 / 插入规则另行确认。\n3. **定位与高亮规则**：已明确目标会话需完整进入可见区域，并保持与当前聊天一致的选中 / 高亮状态，至少持续到切换会话或执行新的搜索 / 滚动操作。\n\n## 判断\n\nPRD 当前已满足进入研发候选的基本要求：\n\n- 用户问题清楚。\n- 用户故事成立。\n- 范围与非目标明确。\n- 验收标准可由用户感知和测试验证。\n- 未写入 Redis、数据库表、接口字段、代码等实现细节。\n\n## 备注\n\n通过仅表示该 PRD 可转研发候选；最终是否排期仍由曾茜 / 产品负责人确认。",
+  "labels": ["status/ready"],
+  "remove_labels": ["status/prd-review", "status/needs-revision"]
+}
