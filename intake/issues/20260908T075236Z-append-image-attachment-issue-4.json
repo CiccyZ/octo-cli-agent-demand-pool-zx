@@ -1,0 +1,8 @@
+{
+  "issue_number": 4,
+  "labels": ["status/new", "source/user-feedback"],
+  "original_submission": "补充原始反馈截图附件：Loop任务里的已完成，能按照时间排序吗？最新完成的在最上面这样子。顺序完全打乱扒拉找起来有点费劲诶",
+  "summary": "补充原始反馈截图附件，避免 GitHub issue 正文只有文字、看不到图片上下文。",
+  "body": "### 原始反馈截图附件\n\n![Loop 已完成任务排序反馈截图](https://raw.githubusercontent.com/CiccyZ/octo-cli-agent-demand-pool-zx/main/assets/issue-attachments/4/loop-completed-tasks-sort-feedback.png)\n\n附件路径：`assets/issue-attachments/4/loop-completed-tasks-sort-feedback.png`",
+  "next_step": "后续处理该需求时请同时参考原始文字和截图上下文。"
+}
