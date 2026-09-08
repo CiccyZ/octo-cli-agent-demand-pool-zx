@@ -10,9 +10,7 @@ on:
       - .github/workflows/prd-review-scan.yml
       - .github/workflows/issue-intake.yml
       - .github/scripts/prd-review-scan.js
-      - docs/prd/**
       - data/labels.json
-      - intake/processed/**
 
 permissions:
   contents: write
@@ -48,4 +46,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/prd-review-candidates.json logs/prd-review-scan-runs.md
           git commit -m "chore: update prd review scan output"
+          git pull --rebase origin main
           git push
