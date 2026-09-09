@@ -1,0 +1,33 @@
+{
+  "title": "Windows 用户希望 octo-cli 支持通过 winget 安装",
+  "labels": ["type/feature", "priority/P2", "status/review", "area/agent-automation", "source/user-feedback"],
+  "original_submission": "李明刚才反馈说：希望 octo-cli 能支持 winget 装，我们这边 Windows 机器多，现在只能手动下 tar.gz 解压挺麻烦的。",
+  "reporter_name": "李明（由 AINOL考官转述）",
+  "reporter_uid": "待补充",
+  "message_time": "Wed 2026-09-09 11:23:30 GMT+8 / confirmed Wed 2026-09-09 11:23:48 GMT+8",
+  "error_description": "Windows 用户希望 octo-cli 支持通过 winget 安装。目前在 Windows 机器较多的团队环境中，只能手动下载 tar.gz 并解压，批量部署和日常维护成本较高。",
+  "root_cause": "待确认。初步判断是当前公开安装方式没有覆盖 Windows 用户常用的 winget 包管理入口，导致 Windows 环境需要依赖手动下载和解压流程。",
+  "expected_behavior": "Windows 用户可以通过 winget 直接安装 octo-cli，并能按常规方式完成版本更新和卸载，减少手动下载、解压、配置的操作成本。",
+  "reproduction_steps": [
+    "在 Windows 机器上准备安装 octo-cli。",
+    "尝试通过常用 Windows 包管理方式 winget 安装 octo-cli。",
+    "当前现象：无法通过 winget 直接安装，只能手动下载 tar.gz 后解压。",
+    "当团队 Windows 机器较多时，需要重复执行手动下载、解压、配置流程。"
+  ],
+  "proposed_fix": "为 octo-cli 补充面向 Windows 用户的 winget 安装支持，并在安装文档中说明 winget 安装、升级和卸载方式。",
+  "environment": [
+    "产品模块：octo-cli 安装 / 分发 / Windows 部署体验",
+    "场景：Windows 机器较多的团队批量安装或维护 octo-cli",
+    "反馈来源：Octo 群消息 2097526358161657856，由 AINOL考官转述李明反馈",
+    "查重结果：当前 issue snapshot 中未发现 winget / Windows 安装分发相关已有 issue，建议新建 issue。",
+    "客户端/系统：Windows，具体版本待补充"
+  ],
+  "acceptance_criteria": [
+    "Windows 用户可以使用 winget 搜索到 octo-cli。",
+    "Windows 用户可以通过 winget 完成 octo-cli 安装。",
+    "安装完成后，用户可以在命令行中直接执行 octo-cli 并看到正常命令响应。",
+    "Windows 用户可以通过 winget 完成 octo-cli 的升级或卸载。",
+    "安装文档中包含 winget 安装方式，并说明适用平台、前置条件和常见失败处理建议。"
+  ],
+  "next_step": "确认 issue 创建后自动补 PRD，并标记 status/prd-review 等阿强 Review。"
+}
