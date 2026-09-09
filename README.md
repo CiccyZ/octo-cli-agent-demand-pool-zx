@@ -9,7 +9,7 @@
 - PRD Review 记录
 - 考试期间的需求流转状态
 
-> 目标产品仓库只读；本仓库只作为考试需求池和过程沉淀，不代表向 `Mininglamp-OSS/octo-cli` 原仓库直接提交变更。
+> 知识问答只能引用本仓库、考试群上下文、以及曾茜明确授权的我方资料；不得读取目标产品仓库作为现场问答依据。本仓库只作为考试需求池和过程沉淀，不代表向 `Mininglamp-OSS/octo-cli` 原仓库直接提交变更。
 
 ## Agent 分工
 
@@ -60,7 +60,8 @@
 ## 考试约束
 
 - 本仓库必须保持 Public，便于考官读取。
-- 对 `Mininglamp-OSS/octo-cli` 原仓库保持只读，不直接写入原仓库 Issue / PR，除非考官另行明确要求。
+- 知识问答只能查本仓库、考试群上下文、以及曾茜明确授权的我方资料；不得读取 `Mininglamp-OSS/octo-cli` 目标仓库作为依据。
+- 不直接写入 `Mininglamp-OSS/octo-cli` 原仓库 Issue / PR，除非考官另行明确要求。
 - 产品功能回答必须给出可核验来源，推荐格式：`来源: <相对路径>#L<起>-L<止>`。
 - 不确定的结论必须明确说“不确定”，不能编造路径、行号或产品能力。
 - 凭证、token、cookie、API key 不进入仓库，不在群聊中明文展示。
@@ -75,7 +76,7 @@
 ## 文档索引
 
 - [考试工作流](docs/workflow.md)
-- [octo-cli 参考资料索引](docs/reference-map.md)
+- [我方知识资料索引](docs/reference-map.md)
 - [octo-cli Agent 知识库覆盖清单](docs/knowledge-base.md)
 - [Agent 分工说明](docs/agent-roles.md)
 - [Label 体系](docs/label-system.md)

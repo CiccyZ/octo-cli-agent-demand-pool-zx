@@ -2,7 +2,9 @@
 
 本文件用于对照考试图中的「这个 CLI 是干什么的」知识覆盖要求，帮助阿珍/阿强在考试群回答产品功能、Bug、需求和 PRD 问题时快速定位依据。
 
-> 答题规则：能确认的结论必须带来源；不确定时说“不确定”，不要编造路径和行号。
+> 答题规则：能确认的结论必须带本仓库来源；不确定时说“不确定”，不要编造路径和行号。
+>
+> 依据范围：只读本仓库、考试群上下文、以及曾茜明确授权的我方资料；不得读取 `Mininglamp-OSS/octo-cli` 目标仓库作为知识问答依据。
 
 ## 1. 凭证权限：token 类型、权限、掩码规则
 
@@ -14,11 +16,10 @@
 - `octo_loop_*`：Loop task credential，按 Fleet policy 使用。
 - token 输出会被 masking：保留前缀、两个开头字符、固定 `***` 和末尾四位；未知前缀完全隐藏。
 
-### 参考来源
+### 本仓库答题依据
 
-- `README.md#L234-L258`：认证与 token 类型能力表。
-- `docs/octo-cli-design.md#L9-L19`：Bot Type Reference。
-- `SECURITY.md#L38-L50`：token masking 规则。
+- 本节“需要掌握”条目已沉淀 token 类型、权限和掩码规则；答题时引用本文件对应行号。
+- 如本节未覆盖具体 token 行为，回答“不确定”，不要回查目标仓库。
 
 ## 2. 配置环境变量：必填项、各自作用
 
@@ -33,9 +34,10 @@
 - `OCTO_FORMAT`：默认输出格式。
 - `OCTO_CREDENTIAL_MODE=task`：daemon-launched Loop task 场景使用。
 
-### 参考来源
+### 本仓库答题依据
 
-- `README.md#L260-L302`：token 变量、API Base URL、环境变量表。
+- 本节“需要掌握”条目已沉淀配置环境变量与优先级；答题时引用本文件对应行号。
+- 如本节未覆盖具体变量，回答“不确定”，不要回查目标仓库。
 
 ## 3. 传输重试：超时、重试次数、退避策略
 
@@ -49,10 +51,10 @@
 - `Retry-After` 会被遵守，且不受 max delay 限制。
 - `--no-retry` 可关闭 transient failure 重试。
 
-### 参考来源
+### 本仓库答题依据
 
-- `docs/architecture-design.md#L364-L373`：Retry & Timeout。
-- `README.md#L341-L353`：`--timeout` / `--no-retry` 通用参数。
+- 本节“需要掌握”条目已沉淀超时、重试次数、退避和 retryable codes；答题时引用本文件对应行号。
+- 如本节未覆盖具体重试行为，回答“不确定”，不要回查目标仓库。
 
 ## 4. 输出错误：JSON 封装格式、错误分类、退出码
 
@@ -64,11 +66,10 @@
 - 本地校验失败不发请求，例如缺少必填字段、enum 不合法、uint64 非法等。
 - 后端错误会映射到 CLI 类型，如 `auth_error`、`validation`、`permission`、`rate_limited`、`network`、`api_error`。
 
-### 参考来源
+### 本仓库答题依据
 
-- `README.md#L304-L339`：成功/失败 envelope 和退出码。
-- `docs/architecture-design.md#L223-L240`：Backend Error → CLI Type 映射。
-- `docs/architecture-design.md#L242-L279`：pagination / rate limit / notice envelope。
+- 本节“需要掌握”条目已沉淀输出 envelope、错误分类和退出码；答题时引用本文件对应行号。
+- 如本节未覆盖具体错误格式，回答“不确定”，不要回查目标仓库。
 
 ## 5. 通用参数：`--format` / `--jq` / `--dry-run` / `--page-all`
 
@@ -84,10 +85,10 @@
 - `--page-all`：自动翻页直到 `has_more=false`，合并输出。
 - `--page-limit`：限制 `--page-all` 最多抓取页数，默认 10。
 
-### 参考来源
+### 本仓库答题依据
 
-- `README.md#L341-L369`：Universal flags 和示例。
-- `docs/architecture-design.md#L431-L457`：Universal Flags 与 `octo-cli api`。
+- 本节“需要掌握”条目已沉淀通用参数和使用边界；答题时引用本文件对应行号。
+- 如本节未覆盖具体参数，回答“不确定”，不要回查目标仓库。
 
 ## 6. 功能域操作：支持的功能域、操作数、不可用操作说明
 
@@ -115,13 +116,10 @@
 - App Bot 群写/thread 操作受限；User Bot 需要群成员身份。
 - Loop 里的 task 不是 GitHub issue；如果考官明确说 GitHub issue，应在需求池仓库创建 GitHub Issue，不要误用 Loop task。
 
-### 参考来源
+### 本仓库答题依据
 
-- `README.md#L36-L51`：Domains 表。
-- `README.md#L100-L185`：Quick Start 示例。
-- `docs/octo-cli-design.md#L67-L97`：message domain。
-- `docs/octo-cli-design.md#L101-L149`：group/thread domain 与限制。
-- `skills/octo-loop/SKILL.md#L20-L28`：Loop task 与 GitHub/Jira issue 边界。
+- 本节“需要掌握”和“关键边界”条目已沉淀功能域、操作数量和不可用/受限能力；答题时引用本文件对应行号。
+- 如本节未覆盖具体 domain 或操作，回答“不确定”，不要回查目标仓库。
 
 ## 7. 安装发布：npm / go 安装方式、发布包命名规则
 
@@ -135,10 +133,10 @@
 - npm 包是薄 Node wrapper，平台二进制在 optional dependency，如 `@mininglamp-oss/octo-cli-darwin-arm64`。
 - npm 包使用 `--provenance` 发布，可用 `npm audit signatures` 验证。
 
-### 参考来源
+### 本仓库答题依据
 
-- `README.md#L53-L99`：安装方式与 Release 包命名。
-- `npm/README.md#L1-L44`：npm 分发、平台包、trust model。
+- 本节“需要掌握”条目已沉淀安装方式、发布包命名和 npm 分发规则；答题时引用本文件对应行号。
+- 如本节未覆盖具体安装/发布细节，回答“不确定”，不要回查目标仓库。
 
 ## 8. 安全本地存储：token 存储位置、加密方式
 
@@ -150,10 +148,10 @@
 - `config.json` 存非 secret profile metadata；`cred.salt` 权限 0600；目录权限 0700。
 - 加密 key：`SHA256(machineID ‖ salt)`；绑定机器，拷贝到另一台机器不能直接解密。
 
-### 参考来源
+### 本仓库答题依据
 
-- `SECURITY.md#L31-L36`：token 输入安全。
-- `SECURITY.md#L52-L65`：本地凭证存储与加密方式。
+- 本节“需要掌握”条目已沉淀 token 输入安全、本地存储和加密方式；答题时引用本文件对应行号。
+- 如本节未覆盖具体安全机制，回答“不确定”，不要回查目标仓库。
 
 ## 9. Agent Skills：内置 skill 的使用方法
 
@@ -167,17 +165,17 @@
 - 关键 skill：`octo-shared`、`octo-messaging`、`octo-files`、`octo-drive`、`octo-docs`、`octo-marketplace`、`octo-html`、`octo-mail`。
 - `octo-matter` 和 `octo-summary` 暂时 withheld。
 
-### 参考来源
+### 本仓库答题依据
 
-- `README.md#L371-L412`：Agent Skills 列表与命令。
-- `npm/README.md#L11-L17`：runtime 可直接加载 embedded Agent Skill 文档。
+- 本节“需要掌握”条目已沉淀 Agent Skills 命令和关键 skill 列表；答题时引用本文件对应行号。
+- 如本节未覆盖具体 skill，回答“不确定”，不要回查目标仓库。
 
 ## 考试问答建议
 
 1. 先判断问题属于 9 个模块中的哪一类。
-2. 优先查本文件的参考来源，再回 `Mininglamp-OSS/octo-cli` 原文确认。
+2. 优先查本文件、`README.md`、`docs/reference-map.md`、相关 Issue/PRD/日志等本仓库资料；不得回 `Mininglamp-OSS/octo-cli` 目标仓库确认。
 3. 回答格式建议：
    - 结论：一句话。
-   - 依据：列 1-3 条来源。
+   - 依据：列 1-3 条本仓库来源。
    - 风险/边界：如果涉及权限、不可用操作、安全凭证，必须补充。
 4. 如果是 Bug/需求：不要只回答知识点，要进入需求池流程，创建对应 Issue。
