@@ -33,3 +33,4 @@
 | 2026-09-09T03:30:59.646Z | status/prd-review | 2 | 1 | 1 | wrote data/prd-review-candidates.json; ready 1/1 |
 | 2026-09-09T03:35:10.618Z | status/prd-review | 2 | 2 | 2 | wrote data/prd-review-candidates.json; ready 2/2 |
 | 2026-09-09T03:38:13.327Z | status/prd-review | 2 | 1 | 1 | wrote data/prd-review-candidates.json; ready 1/1 |
+| 2026-09-09T04:04:32.282Z | status/prd-review | 2 | 0 | 0 | no open issue with status/prd-review |

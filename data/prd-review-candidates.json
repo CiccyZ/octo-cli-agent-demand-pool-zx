@@ -1,36 +1,11 @@
 {
-  "generated_at": "2026-09-09T03:38:13.327Z",
+  "generated_at": "2026-09-09T04:04:32.282Z",
   "scan_rule": {
     "label": "status/prd-review",
     "max_per_run": 2,
     "sort": "oldest updated_at first",
     "purpose": "candidate discovery only; final PRD Review is performed by 阿强 OpenClaw cron"
   },
-  "total_open_prd_review_issues": 1,
-  "candidates": [
-    {
-      "number": 10,
-      "title": "命令输出需要更容易被脚本直接消费",
-      "html_url": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/10",
-      "labels": [
-        "area/agent-automation",
-        "priority/P2",
-        "source/user-feedback",
-        "status/ready",
-        "type/feature",
-        "type/ux"
-      ],
-      "updated_at": "2026-09-09T03:38:12Z",
-      "prd_path": "docs/prd/script-friendly-output.md",
-      "prd_url": "https://raw.githubusercontent.com/CiccyZ/octo-cli-agent-demand-pool-zx/main/docs/prd/script-friendly-output.md",
-      "self_check": "自检结果\n\n- Issue 链接已包含：通过。\n- PRD 使用 Markdown 格式：通过。\n- PRD 只描述用户问题、目标、范围和可感知结果，不写技术实现：通过。\n- 未出现 Redis、数据库表、接口字段、代码块等 How 内容：通过。\n- 验收标准均为用户可感知效果，没有使用“接口返回 200”等技术指标：通过。\n- 用户原始反馈与产品分析分离：通过。\n- 范围和非目标已写清：通过。\n- 风险与待确认问题已列出：通过。\n- 未包含 token、私钥、cookie 等敏感信息：通过。\n\n\n\n---comment---",
-      "evidence": {
-        "issue_link": "https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/10",
-        "prd_path": "docs/prd/script-friendly-output.md",
-        "self_check_present": true
-      },
-      "ready_for_review": true,
-      "scan_notes": "ready: issue has status/prd-review, PRD path, and self-check evidence"
-    }
-  ]
+  "total_open_prd_review_issues": 0,
+  "candidates": []
 }
