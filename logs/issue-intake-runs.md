@@ -39,3 +39,4 @@
 | 2026-09-08T12:04:10.268Z | 20260908t1201z-prd-review-pass-issue-4.json | commented #4 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/4 |
 | 2026-09-09T03:25:55.462Z | 20260909T1124Z-winget-install-support.json | created #9 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/9 |
 | 2026-09-09T03:27:34.929Z | 20260909T1127Z-attach-prd-issue-9.json | edited #9 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/9 |
+| 2026-09-09T03:29:42.844Z | 20260909T1129Z-script-friendly-output.json | created #10 | https://github.com/CiccyZ/octo-cli-agent-demand-pool-zx/issues/10 |
