@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T04:04:59.202Z",
+  "generated_at": "2026-09-15T06:06:20.408Z",
   "scan_rule": {
     "label": "status/prd-review",
     "max_per_run": 2,
